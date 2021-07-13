@@ -6,7 +6,7 @@ on:
 jobs:
   publish:
     name: Install and publish
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
       - uses: actions/setup-node@v1
@@ -19,4 +19,5 @@ jobs:
           expo-password: ${{ secrets.EXPO_CLI_PASSWORD }}
           expo-cache: true
       - run: yarn
+      - run: npm install -g expo-cli
       - run: expo publish --release-channel staging
