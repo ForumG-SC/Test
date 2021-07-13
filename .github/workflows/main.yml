@@ -3,7 +3,6 @@ name: Expo CI CD
 on:
   push :
     branches : [release]
-
 jobs:
   Build-for-android:
     runs-on: macos-latest
