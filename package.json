@@ -5,7 +5,15 @@
     "android": "expo start --android",
     "ios": "expo start --ios",
     "web": "expo start --web",
-    "eject": "expo eject"
+    "eject": "expo eject",
+    "test": "npm run static-code-analysis && npm run dynamic-code-analysis",
+    "static-code-analysis": "npm run typecoverage && npm run tslint && npm run prettier",
+    "dynamic-code-analysis": "jest --coverage",
+    "typecoverage": "type-coverage -p src --detail",
+    "tslint": "tslint -p src",
+    "prettier": "prettier --check \"src/**/*.{ts,tsx}\"",
+    "format": "prettier --write \"src/**/*.{ts,tsx}\"",
+    "jest": "jest"
   },
   "dependencies": {
     "expo": "~42.0.1",
